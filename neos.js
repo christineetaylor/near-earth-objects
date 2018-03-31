@@ -27,7 +27,8 @@ $.ajax({
 
 function displayNeos(neoList) {
   $('.title').prepend(neoList.length);
-  
+  $('.title').append(today);
+
   for (neo in neoList) {
     $('.asteroidList').append('<li>' + neoList[neo].name + '<br>' +
     neoList[neo].absoluteMagnitude + '<br>' +

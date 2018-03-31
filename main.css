@@ -1,15 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+
+body {
+  background: url('http://www.sterne-und-weltraum.de/fm/912/thumbnails/apophis-closeapp.jpg.2945545.jpg');
+  font-family: 'Space Mono', monospace;
+
+}
+
 #neos {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15px;
 
 }
 
 .title {
   margin: 0px auto;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+
 }
 
 .asteroidList {
   list-style-type: none;
+  margin: 10px auto;
 }
 
 li {
@@ -19,6 +31,7 @@ li {
   border: solid 5px;
   border-radius: 10px;
   border-color: blue;
+  background-color: white;
   display: inline-block;
 }
 
