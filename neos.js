@@ -9,38 +9,28 @@ let url = 'https://api.nasa.gov/neo/rest/v1/feed/today?api_key=v5RFC0BvhWX1dRLup
 $.ajax({
   url: url,
   success: function (results) {
+
+    let previous = results.links.prev;
+    let next = results.links.next;
+
     let neos = results.near_earth_objects[today];
     let neoList = [];
+
     for (var i = 0; i < neos.length; i++) {
       neoList.push({
         name: neos[i].name,
+        link: neos[i].nasa_jpl_url,
         maxDiameter: neos[i].estimated_diameter.meters.estimated_diameter_max,
         potentialHazard: neos[i].is_potentially_hazardous_asteroid,
         missDistance: neos[i].close_approach_data[0].miss_distance.kilometers,
         absoluteMagnitude: neos[i].absolute_magnitude_h
       });
     }
+    links(previous, next);
     displayNeos(neoList);
   },
   error: function (error) { console.log(error); }
 });
-
-function displayNeos(neoList) {
-  $('.title').prepend(neoList.length);
-  $('.title').append(today);
-
-  for (neo in neoList) {
-    $('.asteroidList').append('<li>' + neoList[neo].name + '<br>' +
-    neoList[neo].absoluteMagnitude + '<br>' +
-    neoList[neo].maxDiameter  + '<br>' +
-    neoList[neo].missDistance  + '</li>')
-
-    if (neoList[neo].potentialHazard) {
-      $('li').css('border-color', 'red');
-    }
-  }
-}
-
 
 function formatDate(dateObject) {
   let year = dateObject.getFullYear();
@@ -54,3 +44,24 @@ function formatDate(dateObject) {
   return year + '-' + month + '-' + + day;
 }
 
+function displayNeos(neoList) {
+  $('.title').prepend(neoList.length);
+  $('.title').append(today);
+
+  for (neo in neoList) {
+    $('.asteroidList').append('<li><a href="' + neoList[neo].link + '">' + neoList[neo].name + '</a><br>' +
+      neoList[neo].absoluteMagnitude + '<br>' +
+      neoList[neo].maxDiameter + '<br>' +
+      neoList[neo].missDistance + '</li>')
+
+    if (neoList[neo].potentialHazard) {
+      $('li').css('border-color', 'red');
+    }
+  }
+}
+
+function links(previous, next) {
+  $('.otherDays').append(
+    '<a href = "' + previous + '"><-</a> TIME <a href = "' + next + '">-></a>'
+  ); 
+}
