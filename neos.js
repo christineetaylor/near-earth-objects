@@ -42,13 +42,13 @@ function displayNeos(neoList) {
 }
 
 
-function formatDate(today) {
-  let year = today.getFullYear();
+function formatDate(dateObject) {
+  let year = dateObject.getFullYear();
 
-  let month = today.getMonth() + 1;
+  let month = dateObject.getMonth() + 1;
   if (month < 10) month = '0' + month;
 
-  let day = today.getDate();
+  let day = dateObject.getDate();
   if (day < 10) day = '0' + day;
 
   return year + '-' + month + '-' + + day;
