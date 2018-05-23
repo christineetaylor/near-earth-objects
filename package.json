@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/ChristineETaylor/near-earth-objects/issues"
   },
-  "homepage": "https://github.com/ChristineETaylor/near-earth-objects#readme",
+  "homepage": "https://github.com/ChristineETaylor/near-earth-objects",
   "dependencies": {
     "body-parser": "^1.18.2",
     "chai": "^4.1.2",
