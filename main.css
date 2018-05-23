@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+@import url('https://fonts.googleapis.com/css?family=Sunflower:300');
 
 body {
   background: url('http://www.sterne-und-weltraum.de/fm/912/thumbnails/apophis-closeapp.jpg.2945545.jpg');
-  font-family: 'Space Mono', monospace;
+  font-family: 'Sunflower', monospace;
 }
 
 #neos {
