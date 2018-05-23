@@ -16,7 +16,7 @@ $.ajax({
     let neoList = [];
 
     for (let i in neos) {
-      neoList.push({
+      neoList.unshift({
         name: neos[i].name,
         link: neos[i].nasa_jpl_url,
         maxDiameter: neos[i].estimated_diameter.meters.estimated_diameter_max,
