@@ -3,7 +3,6 @@
 // visually differentiate potentialy hazardous NEOs
 
 let today = formatDate(new Date());
-
 let url = 'https://api.nasa.gov/neo/rest/v1/feed/today?api_key=v5RFC0BvhWX1dRLupQt3ykxykp0OXc5ULq4OFozA'
 
 $.ajax({

@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Sunflower:300');
 
 body {
-  background: url('http://www.sterne-und-weltraum.de/fm/912/thumbnails/apophis-closeapp.jpg.2945545.jpg');
   font-family: 'Sunflower', monospace;
 }
 
 #neos {
   font-size: 15px;
+  padding: 100px;
 }
 
 .title {
