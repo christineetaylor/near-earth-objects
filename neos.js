@@ -47,14 +47,11 @@ function displayNeos(neoList) {
   $('.title').prepend(neoList.length);
   $('.title').append(today);
 
-
-
-
   for (neo in neoList) {
     $('.asteroidList').append('<li><a href="' + neoList[neo].link + '">' + neoList[neo].name + '</a><br>' +
-      'Mag: ' + Math.round(neoList[neo].absoluteMagnitude * 100) / 100 + '<br>' +
-      'Diameter: ' + Math.round(neoList[neo].maxDiameter * 100) / 100 + '<br>' +
-      'Distance: ' + Math.round(neoList[neo].missDistance * 100) / 100 + '</li>')
+      'Mag: ' + displayNumbers(neoList[neo].absoluteMagnitude) + '<br>' +
+      'Diameter: ' + displayNumbers(neoList[neo].maxDiameter) + '<br>' +
+      'Distance: ' + displayNumbers(neoList[neo].missDistance) + '</li>')
 
     if (neoList[neo].potentialHazard) {
       $('li').css('border-color', 'red');
@@ -62,8 +59,18 @@ function displayNeos(neoList) {
   }
 }
 
+function displayNumbers(n) {
+  let digits = n.toString().split('.');
+
+  if (digits[0].length > 3) {
+    let int = digits[0].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+    n = int;
+  }
+  return n;
+}
+
 function links(previous, next) {
   $('.otherDays').append(
     '<a href = "' + previous + '"><-</a> TIME <a href = "' + next + '">-></a>'
-  ); 
+  );
 }
