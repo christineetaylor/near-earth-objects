@@ -128,7 +128,6 @@
         return "rotate(" + (d.phi0 + (delta * (d.speed / 100))) + ")";
       });
 
-    // throttled rotaiton animations
     setInterval(function () {
       var delta = (Date.now() - t0);
       svg.selectAll(".planet_cluster, .moon_cluster").attr("transform", function (d) {

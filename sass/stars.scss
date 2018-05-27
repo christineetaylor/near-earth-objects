@@ -1,14 +1,11 @@
 @import 'compass';
-
-@function multiple-box-shadow ($n) {
-  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+@function multiple-box-shadow ($n, $c) {
+  $value: '#{random(2000)}px #{random(2000)}px #{$c}';
   @for $i from 2 through $n {
-    $value: '#{$value} , #{random(2000)}px #{random(3000)}px #FFF';
+      $value: '#{$value} , #{random(2000)}px #{random(3000)}px #{$c}';
   }
   @return unquote($value);
 }
-
-$shadows-small: multiple-box-shadow(2000);
 
 html {
   background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
@@ -16,22 +13,39 @@ html {
   overflow: hidden;
 }
 
+.space-ephemera {
+  animation: starTrajectory 30s linear infinite;
+  background: transparent;
+  box-shadow: multiple-box-shadow(7, orange);
+  height: 2px;
+  width: 2px;
+
+  // ::after {
+  //   background: transparent;
+  //   // box-shadow: multiple-box-shadow(100, green);
+  //   // height: 1px;
+  //   position: absolute;
+  //   top: 2000px;
+  //   width: 1px;
+  // }
+}
+
 .stars {
   animation: starTrajectory 30s linear infinite;
   background: transparent;
-  box-shadow: $shadows-small;
+  box-shadow: multiple-box-shadow(2000, #efeeff);
   height: 1px;
   width: 1px;
 
-  ::after {
-    background: transparent;
-    box-shadow: $shadows-small;
-    content: '';
-    height: 1px;
-    position: absolute;
-    top: 2000px;
-    width: 1px;
-  }
+  // ::after {
+  //   background: transparent;
+  //   // box-shadow: multiple-box-shadow(2000, #efeeff);
+  //   content: '';
+  //   // height: 1px;
+  //   position: absolute;
+  //   top: 2000px;
+  //   width: 1px;
+  // }
 }
 
 @keyframes starTrajectory {
