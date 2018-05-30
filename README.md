@@ -1,6 +1,6 @@
 ## Synopsis
 
-Connects to NASA Near Earth Objects API to present the NEOs orbiting our planet on the current day.
+Browser-based APP connects to NASA Near Earth Objects API and displays the NEOs orbiting our planet on the current day.
 
 ## API Reference
 
@@ -12,9 +12,9 @@ Near-Earth Objects (NEOs) are comets and asteroids that have been nudged by the 
 
 ## Built With
 
--JavaScript
--jQuery
--Sass/CSS
+- JavaScript
+- jQuery
+- Sass/CSS
 
 ## Future development
 - Create D3-based UI demonstrating relative absolute magnitude of NEOs.
