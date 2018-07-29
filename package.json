@@ -1,28 +1,16 @@
 {
-  "name": "near-earth-objects",
-  "version": "1.0.0",
-  "description": "Connects to NASA Near Earth Objects API to present the NEOs orbiting our planet on the current day.",
-  "main": "neos.js",
-  "scripts": {
-    "test": "test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ChristineETaylor/near-earth-objects.git"
-  },
-  "author": "Christine E. Taylor",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ChristineETaylor/near-earth-objects/issues"
-  },
-  "homepage": "https://github.com/ChristineETaylor/near-earth-objects",
+  "name": "neos",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "chai": "^4.1.2",
-    "cors": "^2.8.4",
-    "express": "^4.16.1",
-    "jquery": "^3.3.1",
-    "mocha": "3.5.3",
-    "request": "^2.85.0"
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
