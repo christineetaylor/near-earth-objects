@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 // import "./neo";
+import "./App.css";
+import "./stars.css";
 
 class App extends Component {
   constructor() {
@@ -49,19 +51,25 @@ class App extends Component {
   renderNeos() {
     return (
       <div>
-        {this.state.neoList.map(neo => (
-          <ul key={neo}>
+        <ul>
+          {this.state.neoList.map(neo => (
             <li key={neo[0]}>
+              <br />
               <a key={neo[1]} href="{neo[1]}">
                 {neo[0]}
               </a>
+              <br />
+              {neo[2]}
+              <br />
+              {neo[4]}
+              <br />
+              {neo[5]}
+              <br />
+              {neo[6]}
+              <br />
             </li>
-            <li key={neo[2]}>{neo[2]}</li>
-            <li key={neo[4]}>{neo[4]}</li>
-            <li key={neo[5]}>{neo[5]}</li>
-            <li key={neo[6]}>{neo[6]}</li>
-          </ul>
-        ))}
+          ))}
+        </ul>
       </div>
     );
   }
